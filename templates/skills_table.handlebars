@@ -1,0 +1,26 @@
+{{!-- author: Willow Jarvis --}}
+
+<table class="table">
+<thead>
+  <tr>
+    <th>Skill Name</th>
+    <th>Proficiency</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  {{#each skill}}
+    <tr>
+      <td>{{name}}</td>
+      <td>
+        <div class="range">
+            <input disabled type="range" name="range" min="1" max="5" value="{{proficiency}}" onchange="range.value=value" disabled>
+        </div>
+      </td>
+      <td>
+      <span class="pull-right"><span class="glyphicon glyphicon-remove remove-skill" name={{name}} proficiency={{proficiency}}></span></span>
+      </td>
+    </tr>
+  {{/each}}
+</tbody>
+</table>

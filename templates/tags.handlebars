@@ -1,0 +1,7 @@
+{{!-- author: Willow Jarvis --}}
+{{#each tag}}
+	<li class="list-group-item"><input type="checkbox" class = "{{className}}" value="" tag-name = "{{tagName}}" ></input> &nbsp;<span class="label label-default">{{tagName}}</span></li>
+{{/each}}
+{{#if forSubcribe}}
+	<li class="list-group-item"><input type="checkbox" value="" id = "new-tag"></input> &nbsp; <span class="label label-default"> <input id="new-tag-body" placeholder="Create A New Tag"></input></span></li> 
+{{/if}}

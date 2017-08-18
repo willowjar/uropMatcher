@@ -1,0 +1,21 @@
+{{!-- author: Elise Xue--}}
+<table class="table student-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="year">Year</th>
+      <th>Department</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each students}}
+    <tr>
+      <td><a href="/studentProfile.html?kerberos={{kerberos}}">{{name}}</a></td>
+      <td class="year">{{year}}</td>
+      <td>{{departments}}</td>
+      <td>{{kerberos}}@mit.edu</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

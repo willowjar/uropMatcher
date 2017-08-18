@@ -1,0 +1,14 @@
+{{!-- author: Willow Jarvis --}}
+
+
+{{#each urop}}
+	<a class="{{#if match_based_on_interest}} highlighted {{/if}} list-group-item" uid = {{_id}}>	
+		{{#if canFavorite}}
+			<input type="checkbox" class = "checkbox-urops" forurop = "{{_id}}" {{#if favorited}} checked {{/if}}></input>
+		{{/if}}
+	{{title}} 
+		{{#if canDelete}}
+			<span class="pull-right"><span class="glyphicon glyphicon-remove remove-posting" uid = {{_id}}></span></span>
+		{{/if}}
+	</a>
+{{/each}}

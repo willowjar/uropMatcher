@@ -1,0 +1,77 @@
+{{!-- author: Willow Jarvis , part of this template taken from Elise Xue--}}
+<div>
+	<p><span class="bold">Term:</span> {{term}}</p>
+	<p><span class="bold">Department/Lab/Center:</span> {{lab_name}}</p>
+	<p><span class="bold">Faculty Supervisor:</span> {{faculty_supervisor}}</p>
+	<br>
+	<p><span class="bold">Description:</span></p>
+	<p>{{description}}</p>
+	<br>
+	<p><span class="bold">Required Skills:</span></p>
+	{{#if required_skills}}
+	<table class="table">
+		<thead>
+		  <tr>
+		    <th><span class="bold">Skill Name</span></th>
+		    <th><span class="bold">Proficiency</span></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  {{#each required_skills}}
+		    <tr>
+		      <td>{{name}}</td>
+		      <td>
+		        <div class="range">
+		            <input disabled type="range" name="range" min="1" max="5" value="{{proficiency}}" onchange="range.value=value">
+		        </div>
+		      </td>
+		    </tr>
+		  {{/each}}
+		</tbody>
+	</table>
+	{{else}}
+		<p>None</p>
+	{{/if}}
+	<br>
+	<p><span class="bold">Optional Skills:</span></p>
+	{{#if optional_skills}}
+	<table class="table">
+		<thead>
+		  <tr>
+		    <th><span class="bold">Skill Name</span></th>
+		    <th>Proficiency</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  {{#each optional_skills}}
+		    <tr>
+		      <td>{{name}}</td>
+		      <td>
+		        <div class="range">
+		            <input disabled type="range" name="range" min="1" max="5" value="{{proficiency}}" onchange="range.value=value">
+		        </div>
+		      </td>
+		    </tr>
+		  {{/each}}
+		</tbody>
+	</table>
+	{{else}}
+		<p>None</p>
+	{{/if}}
+	<br>
+	<p><span class="bold">Contact Name:</span> {{contact_name}}</p>
+	<p><span class="bold">Contact Email:</span> {{contact_email}}</p>
+	<p><span class="bold">Tags:</span></p>
+	{{#if tags}}
+		<h4>
+			{{#each tags}}
+				<span class="label label-info">
+				{{ this }}
+				</span>
+			{{/each}}
+		</h4>
+	{{else}}
+		<p>None</p>
+	{{/if}}
+
+</div>

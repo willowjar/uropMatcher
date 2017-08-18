@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- Author: Kelly Shen -->
+<html>
+  <head>
+    <title>UROP Matcher</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Arimo" rel="stylesheet">
+    <link rel='stylesheet' href='css/login_style.css' /> 
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
+    <script src="/js/auth.js"></script> 
+  </head>
+  <body>
+    <h1 class="title" align="center">UROP Matcher</h1>
+    <p class="subtitle" align="center">Find your perfect UROP today!</p>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div id="loginModal">
+                  <div class="modal-body">
+                    <div class="well">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+                        <li><a href="#create" data-toggle="tab">Create Account</a></li>
+                      </ul>
+                      <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane active in" id="login">
+                          <form id="login-form" class="form-horizontal">
+                            <fieldset>   
+                              <div class="control-group">
+                                <!-- Username -->
+                                <label class="control-label" for="kerberos">kerberos</label>
+                                <div class="controls">
+                                  <input type="text" id="kerberos" name="kerberos" placeholder="" class="input-xlarge"><span> @mit.edu</span>
+                                </div>
+                              </div>
+         
+                              <div class="control-group">
+                                <!-- Password-->
+                                <label class="control-label" for="password">Password</label>
+                                <div class="controls">
+                                  <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                                </div>
+                              </div>
+         
+         
+                              <div class="control-group">
+                                <!-- Button -->
+                                <div class="controls">
+                                  <button id="login-button" class="btn">Login</button>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </form>                
+                        </div>
+                        <div class="tab-pane fade" id="create">
+                          <form id="register-form" class="form-horizontal">
+                            <fieldset>   
+                              <div class="control-group">
+                                <!-- User Type -->
+                                <label class="control-label">Are you a student or staff?</label>
+                                <div class="radio">
+                                  <label><input type="radio" id="student" name="userType" value="student">Student</label>
+                                </div>
+                                <div class="radio">
+                                  <label><input type="radio" id="staff" name="userType" value="staff">Staff</label>
+                                </div>
+                              </div>
+                              <div class="control-group">
+                                <!-- Username -->
+                                <label class="control-label" for="kerberos">kerberos</label>
+                                <div class="controls">
+                                  <input type="text" id="kerberos" name="kerberos" placeholder="" class="input-xlarge"><span> @mit.edu</span>
+                                </div>
+                              </div>
+         
+                              <div class="control-group">
+                                <!-- Password-->
+                                <label class="control-label" for="password">Password</label>
+                                <div class="controls">
+                                  <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                                </div>
+                              </div>
+         
+         
+                              <div class="control-group">
+                                <!-- Button -->
+                                <div class="controls">
+                                  <button id="register-button" class="btn">Create Account</input>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </form>
+                        </div>
+                    </div>
+                  </div>
+                  <p id="error-message"></p>
+                  <div id="loading-sign" class="loading-pulse"></div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

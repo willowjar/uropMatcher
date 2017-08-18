@@ -1,0 +1,67 @@
+/** Author: Willow Jarvis*/
+.body-student{
+	margin: 60px;
+}
+.body-student-skills{
+	margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.slider.slider-horizontal {
+	width: 90%;
+}
+.slider .tooltip-inner{
+  max-width:200px;
+  white-space: unset;
+}
+
+#skills-table{
+	margin-top: 100px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+#error-message-skills{
+  margin-top: 100px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+#success-message-skills{
+    margin-top: 100px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+#prof-instruction{
+	margin-bottom: 50px;
+}
+.new-skill-add{
+	display: inline-block;
+}
+.skills-slider.new-skill-add{
+	width: 10%;
+}
+
+#resume-view{
+	width:718px;
+ 	height:700px;
+}
+#new-tag-body{
+	background-color: grey;
+}
+.highlighted{
+	background-color: #8ac5c3;
+}
+.error-message {
+  color: #ff9681;
+  font-size: 12pt;
+}
+.success-message {
+  color: #8ac5c3;
+  font-size: 12pt;
+}
+#urop-display{
+  background-color: #f5f5f5;
+}

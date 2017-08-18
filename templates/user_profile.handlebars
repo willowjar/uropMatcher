@@ -1,0 +1,40 @@
+{{!-- author: Meghana Bhat --}}
+<p>Kerberos: {{kerberos}}</p>
+<p>Name: {{name}}</p>
+<p>Year: {{year}}</p>
+<p>Departments:
+  {{#each departments}}
+      {{this}}{{#unless @last}}, {{/unless}}
+  {{/each}}
+</p>
+<p>Interests:
+  <h4>
+    {{#each interests}}
+      <span class="label label-info">
+      {{ this }}
+      </span>
+    {{/each}}
+  </h4>
+</p>
+<p>Hours Able to Work (per week): {{hours_able_to_work}}</p>
+<p>Skills:</p>
+<table id = "skills-table" class="table">
+<thead>
+  <tr>
+    <th>Skill Name</th>
+    <th>Proficiency</th>
+  </tr>
+</thead>
+<tbody>
+  {{#each skills}}
+    <tr>
+      <td>{{name}}</td>
+      <td>
+        <div class="range">
+            <input type="range" name="range" min="1" max="5" value="{{proficiency}}" onchange="range.value=value">
+        </div>
+      </td>
+    </tr>
+  {{/each}}
+</tbody>
+</table>

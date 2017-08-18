@@ -1,0 +1,37 @@
+{{!-- author: Willow Jarvis --}}
+<table id = "skills-table" class="table">
+<thead>
+  <tr>
+    <th>Skill Name</th>
+    <th>Proficiency</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  {{#each skill}}
+    <tr>
+      <td>{{name}}</td>
+      <td>
+        <div class="range">
+            <input disabled type="range" name="range" min="1" max="5" value="{{proficiency}}" onchange="range.value=value">
+        </div>
+      </td>
+      <td>
+      <span class="pull-right"><span class="glyphicon glyphicon-remove remove-skill" skillName = {{name}} proficiency={{proficiency}}></span></span>
+      </td>
+    </tr>
+  {{/each}}
+  <tr>
+    <td><input id ="new-skill-name" class="typeahead" placeholder="New Skill Name"></input></td>
+    <td>
+        <div class="range"  id = "new-skill-level">
+            <input id = "new-skill-range-slider" type="range" name="range" min="1" max="5" value="5" onchange="range.value=value">
+            <output id = "new-skill-range-display"></output>
+        </div>
+    </td>
+  </tr>
+</tbody>
+</table>
+<button type="button" id="add-skill-button" class="btn">
+Add New Skill
+</button>  

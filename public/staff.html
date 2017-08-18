@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Staff Page</title>
+    <meta name="author" content="Elise Xue">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
+    <link href="css/navbar-fixed-side.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.4.1/css/bootstrap-slider.min.css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Arimo" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/staff.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.4.1/bootstrap-slider.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" />
+    <script src="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.min.js"></script>
+    <script src="typeahead.bundle.js "></script>
+    <script src="bootstrap-tagsinput.js"></script>
+    <link rel="stylesheet" href="bootstrap-tagsinput.css"/>
+    <script src="raty-lib/jquery.raty.js"></script>
+    <link rel="stylesheet" href="raty-lib/jquery.raty.css"/>
+    <script src="handlebars-v4.0.5.js"></script>
+    <script src="templates.js"></script>
+    <script src="js/staff.js"></script>
+  </head>
+  <body>
+
+  <!-- Sidebar referenced from Bootstrap tutorial by Sam Rayener. http://www.samrayner.com/bootstrap-side-navbar/ -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2 col-lg-2">
+          <nav class="navbar navbar-fixed-side">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand">UROPMatcher</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="sidebar-option view-posted-urops active"><a href="#">My Posted UROPs</a></li>
+                <li class="sidebar-option post-urop-form"><a href="#">Post a UROP</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col-sm-9 col-lg-10 inner-content">
+
+          <div class="header" id = "user-name-log-out-header">
+            <p class="inline header-text"></p>
+            <button class="inline btn btn-default"> Log Out </button>
+          </div>
+
+          <div class="urops-list">
+              <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-3" >
+                      <div class="list-group" id = "urop-names-menu" >
+                      </div>
+                    </div>
+                    <div class="col-sm-9" id = "current-posted-urop" >
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="urop-post-form">
+          <form>
+            
+            
+            <p class="error-message title"></p>
+            <div class="form-group">
+              <input type="text" class="form-control" id="title" placeholder="Title">
+            </div>
+
+            <p class="error-message term"></p>
+            <div class="form-group">
+              <select class="form-control" id="term">
+                <option value="" disabled selected>Select Term</option>
+              </select>
+            </div>
+
+            <p class="error-message lab"></p>
+            <div class="form-group">
+              <input type="text" class="form-control" id="lab" placeholder="Department/Lab/Center name">
+            </div>
+
+            <p class="error-message faculty-supervisor"></p>
+            <div class="form-group">
+              <input type="text" class="form-control" id="supervisor" placeholder="Faculty Supervisor">
+            </div>
+
+            <p class="error-message hours"></p>
+            <div class="form-group">
+              <input type="text" class="form-control" id="hours" placeholder="Hours Per Week Needed">
+            </div>
+
+            <p class="error-message description"></p>
+            <div class="form-group">
+              <textarea class="form-control" id="description" placeholder="Description" rows="5"></textarea>
+            </div>
+
+            <p class="error-message departments"></p>
+            <div class="form-group">
+              <select multiple class="form-control" id="courses">
+                <option class="department-label" value="" disabled>Seeking UROP in Department/Departments:</option>
+              </select>
+            </div>
+
+              
+              <div class = "body-required-skills" id = "required-skills">
+                <h4 id = "prof-instruction">Proficiency Level Scale:<br> Please click on each node to see a complete definition </h4>
+                <input id= "example-slider"
+                    type="text"
+                    data-slider-id='example-staff-slider'
+                    data-provide="slider"
+                    data-slider-ticks="[1, 2, 3, 4, 5]"
+                    data-slider-min="1"
+                    data-slider-max="5"
+                    data-slider-step="1"
+                    data-slider-value="3">
+                <label class="skill-title-label" for="required-skill">Required Skill(s):</label>
+                <div class="required" id = "skilltable-add-button">
+                  <button type="button" class="btn">Add New Skill</button> 
+                </div> 
+              </div>   
+
+              <div class = "body-optional-skills" id = "optional-skills">
+              <label class="skill-title-label" for="optional-skill">Optional Skill(s):</label>
+                <div class="optional" id = "skilltable-add-button">
+                  <button type="button" class="btn">Add New Skill</button> 
+                </div> 
+              </div>   
+
+            <div class="form-group">
+              <label class="removal-deadline" for="deadline">Add A Removal Deadline:</label>
+              <p class="error-message deadline"></p>
+              <input class="form-control" type="date" id="deadline">
+            </div>
+            
+            <p class="error-message contact-name"></p>
+            <div class="form-group">
+              <input type="text" class="form-control" id="contact-name" placeholder="Contact Name">
+            </div>
+
+            <p class="error-message contact-email"></p>
+            <div class="form-group">
+              <input type="email" class="form-control" id="contact-email" placeholder="Contact Email - Must be @mit.edu">
+            </div>
+
+            <p class="error-message tags"></p>
+            <div class="form-group">
+              <div class="tag-input">
+                <input type="text" name="tags" id="tags" class="form-control" placeholder="Tags"/>
+              </div>
+            </div>
+
+            <p class="error-message error-message-bottom"></p>
+            <button type="button" id="urop-form-submit-btn" class="submit-btn btn">Post This UROP</button>
+          </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

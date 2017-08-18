@@ -1,0 +1,45 @@
+11/21
+Progress Report
+	•	Agreed upon overall code structure, fonts; still deciding on color scheme  
+	•	Drafted models/routes for users (students, staffs), skills and postings 
+	•	MIT certificate authentication work in progress 
+	•	Student Home work in progress 
+	•	Mutually shared nav bar created ; set up shared style.css file for both student home and staff home 
+
+Agenda
+	•	Feedback from mentor 
+	•	Logistic question 
+		- Can we put all pdf’s in a folder? 
+	•	Backend 
+		- Certificate authentication: how to securely put keys? 
+	•	Frontend 
+		- Menu bar on the left: should we have separate html pages or is hiding and showing div ok? 
+		- Where should html files go? public, public/html, or views? 
+		- Do we need front end tests? Or should people who only do front end also do backend tests? 
+
+Meeting Minutes
+	•	Logistics
+
+		- Next meeting will be wednesday 2:30
+
+		- This Wednesday 2:30 demo to TA
+
+	•	Backend
+
+		- Very bad idea to use mit certificate
+
+		- @mit.edu authentication combined with people directory
+
+	•	Frontend
+
+		- Pastel color recommended, blue green, avoid dark background
+
+		- Menu bar on the left: should we have separate html pages or is hiding and showing div ok? - doesn’t really matter, but avoid copying navbar
+
+		- Where should html files go? public, public/html, or views? - Express needs to be in views; using handlebars can just be in public
+
+	•	Testing
+
+		- Don’t need frontend test, it’d be cool if we could - mainly test frontend functions and logics. Make sure everything else is tested. Recommend doing tests now.
+
+		- Write tests for the code you’re responsible for.

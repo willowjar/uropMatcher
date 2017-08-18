@@ -1,0 +1,116 @@
+/*
+  Author: Elise Xue
+*/
+
+.urop-post-form {
+	margin: 0% 20%;
+}
+
+.right {
+	float:right;
+	margin-right: 15px;
+}
+
+.post {
+	margin-top: 15px;
+}
+
+.form-btn {
+	margin: 15px 0px;
+}
+
+.submit-btn {
+	width:100%;
+}
+
+.half-size {
+	width: 49%;
+	display: inline;
+}
+
+.inner-content {
+	padding-left: 0px;
+}
+
+.header {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 30px;
+	text-align: right;
+	width: 100%;
+	float:right;
+}
+
+.year {
+	width: 50px;
+}
+
+.removal-deadline {
+	margin-top: 30px;
+}
+
+.urops-list {
+	margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.student-table tbody tr:hover td, .student-table tbody tr:hover th {
+	background-color: #f5f5f5;
+}
+
+.sidebar-option.active {
+	background-color: #edece8; 
+	color: #080808;
+}
+
+.bootstrap-tagsinput {
+  	width: 100% !important;
+  	word-wrap: break-word;
+}
+
+.skill-title-label {
+	margin-top: 30px;
+}
+
+.body-student{
+	margin: 60px;
+}
+.body-student-skills{
+	margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.slider.slider-horizontal {
+	width: 90%;
+}
+.slider .tooltip-inner{
+  max-width:200px;
+  white-space: unset;
+}
+#skills-table{
+    margin-bottom: 10px;
+    margin-right: 30px;
+    margin-left: 0px;
+}
+#prof-instruction{
+	margin-bottom: 50px;
+}
+.new-skill-add{
+	display: inline-block;
+}
+.skills-slider.new-skill-add{
+	width: 10%;
+}
+
+.table {
+    table-layout:fixed;
+}
+
+.table td {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}

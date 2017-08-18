@@ -1,0 +1,182 @@
+<!-- Author: Willow Jarvis -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Student Home</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+  <link href="css/navbar-fixed-side.css" rel="stylesheet" >
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.4.1/css/bootstrap-slider.min.css" rel="stylesheet" >
+  <!-- -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/student.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.4.1/bootstrap-slider.min.js"></script>
+  <script src="handlebars-v4.0.5.js"></script>
+  <script src="templates.js"></script>
+  <script type="text/javascript" src="js/student.js"></script>
+  <script src="typeahead.bundle.js "></script>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="UROP, UROP matcher, match, 6.170">
+	<meta name="author" content="Willow Jarvis">
+</head>
+<body>
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-lg-2">
+          <nav class="navbar navbar-fixed-side">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" id="urop-matcher">UROPMatcher</a>
+              </div>
+              <!-- menu items -->
+              <ul class="nav navbar-nav">
+                <li ><a id='suggested-urops'>Suggested UROPs</a></li>
+                <li><a id='my-interests'>My Interests</a></li>
+                <li><a id='my-skills'>My Skills</a></li>
+                <li><a id='previous-experiences'>Previous Experiences</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col-sm-9 col-lg-10">
+          <div class="header" id = "user-name-log-out-header">
+          </div>
+            <!-- Welcome Main Page -->
+            <div class = "body-student" id = "welcome-message">
+            
+              <h3>Welcome to UROPMatcher! </h3><br><br>
+              <p>
+              We match you with potential UROPs you qualify and might be interested in. To help us find better matches, please fill out "My Interests", "My Skills" and optionally upload a resume under "My Resume. <br><br>
+              You will be able to see a list of UROPs suggested to you tailored to your needs. <br><br>
+              Happy UROP finding!<br><br>
+              Sincerely,<br><br>
+              the Open Source Fruit Tart Team<br>
+            </p>
+            </div>
+            <!-- Skills Page -->
+            <!-- slider uses module from https://github.com/seiyria/bootstrap-slider -->
+            <div class = "body-student-skills" id = "skills">
+              <h4 id = "prof-instruction">Proficiency Level Scale:<br> Please click on each node to see a complete definition </h4>
+              <input id= "example-slider"
+                  type="text"
+                  name="somename"
+                  data-slider-id='ex1Slider'
+                  data-provide="slider"
+                  data-slider-ticks="[1, 2, 3, 4, 5]"
+                  data-slider-ticks-labels='["basic knowledge", "limited experience", "pratical experience", "applied theory", "recognized authority"]'
+                  data-slider-min="1"
+                  data-slider-max="5"
+                  data-slider-step="1"
+                  data-slider-value="3">
+
+              <label id="error-message-skills" class = "error-message"></label>
+              <label id="success-message-skills" class = "success-message"></label>
+              <div id = "skilltable-add-button">
+              <button type="button" class="btn btn-primary">Add New Skill</button> 
+              </div> 
+
+          </div>         
+          <div class = "body-student-skills" id = "urops">
+          <!-- View UROP Page-->
+              <div class="container-fluid">
+                  <div class="row">
+                    <p> Check all UROPs you are interested in and click Update when you are ready. Highted UROPs matched your interest tags as well as your skills. Once you express your interest in any UROP, the UROP advisor will be able to see your profile page and be able to contact you for interviews. </p>
+                    <br>
+                    <label id="error-message-urop" class = "error-message">err</label>
+                    <label id="success-message-urop" class = "success-message">sucee</label>
+                    <br>
+                    <div class="col-sm-3" >
+                     <input type="checkbox" id = "check-uncheck-all-button" class="check" value="check all"> Check/Uncheck All </input>
+                     <br>
+                     <br>
+                      <div class="list-group" id = "urop-names-menu" >
+                        <a href="#" class="list-group-item active">First item</a>
+                        <a href="#" class="list-group-item">Second item</a>
+                        <a href="#" class="list-group-item">Third item</a>
+                        <a href="#" class="list-group-item">First item</a>
+                        <a href="#" class="list-group-item">Second item</a>
+                        <a href="#" class="list-group-item">Third item</a>
+                      </div>
+                      <button class = "btn btn-submit" id = "update-urop-interest"> Update</button>
+                    </div>
+                    <div class="col-sm-9" id = "urop-display" >
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Previous Experience Resume -->
+          <div class = "body-student-skills" id = "resume"> 
+            
+            <form id="uploadForm" enctype="multipart/form-data" action="/users/resume" method="post">
+              <input type="file" id = "resume-input" name="resume" accept=".pdf" />
+              <input class="btn btn-submit" id = "resume-upload" type="submit" value="Upload A New Resume" name="submit">
+            </form>
+            <br><br>
+            <label id = "res-preview"> Your Uploaded Resume: </label><br>
+            <p>*Please wait give a few seconds for your newly uploaded resume to appear. Depending on the file size, some resumes may take longer than others to upload.</p><br>
+            <label id="error-message-resume" class = "error-message"></label>
+            <iframe id = "resume-view" frameborder="0"></iframe>
+          </div>
+
+          <!-- My Interests -->
+          <div class = "body-student-skills" id = "interests">
+                <div class="container-fluid">
+                  <div class="row">
+                  <br>
+                    <label id="error-message-interests" class = "error-message"></label>
+                    <label id="success-message-interests" class = "success-message"></label>
+                  <br>
+                    <div class="col-sm-6" >
+                      <label> My Subscribed Interest Tags</label>
+                      
+                      <ul class="list-group" id = "subcribed-tags">
+                        <li class="list-group-item">You have no subcribed interest tags</li>
+                        <li class="list-group-item">&nbsp;&nbsp;</li>
+                        <li class="list-group-item">&nbsp;&nbsp;</li> 
+                        <li class="list-group-item">&nbsp;&nbsp;</li>
+                      </ul>
+
+                      <button class="btn" id = "unsubcribe-button"> Unsubcribe </button>
+                    </div>
+
+                    <div class="col-sm-6"  >
+                      <label> Subscribe to an Interest Tag</label>
+                      <ul class="list-group" id = "not-subcribed-tags" >
+                      
+                        <li class="list-group-item">There are no interest tags to subscribe. Please add an interest :) </li>
+                        <li class="list-group-item">&nbsp;&nbsp;</li>
+                        <li class="list-group-item">&nbsp;&nbsp;</li>
+                        <li class="list-group-item">&nbsp;&nbsp;</li>
+
+                        <li class="list-group-item"><input class = "not-subcribed-tags" type="checkbox" value="" tag-name = "labelnamea"></input> <span class="label label-default"><input id="new-tag" placeholder="Create A New Tag"></input></span></li> 
+  
+                      </ul>
+                      <button class="btn" id = "subcribe-button"> Subscribe </button>
+                    </div>
+
+                  </div>
+              </div>
+          </div>
+
+          <!-- end of body -->
+
+          </div>
+       
+        </div>
+      </div>
+</div>
+
+</body>
+</html>
